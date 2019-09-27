@@ -10,20 +10,20 @@ public class ClientMessage {
         Socket socket = null;
         PrintStream ps = null;
         try {
-            //Соединение с сервером по ip и порту
+            //РЎРѕРµРґРёРЅРµРЅРёРµ СЃ СЃРµСЂРІРµСЂРѕРј РїРѕ ip Рё РїРѕСЂС‚Сѓ
             socket = new Socket("localhost", 8030);
             ps = new PrintStream(socket.getOutputStream());
-            //Отправаить сообщение серверу
-            ps.println("Сервер привет, ответь!!!");
+            //РћС‚РїСЂР°РІР°РёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ СЃРµСЂРІРµСЂСѓ
+            ps.println("РЎРµСЂРІРµСЂ РїСЂРёРІРµС‚, РѕС‚РІРµС‚СЊ!!!");
             socket.close();
-            System.out.println("Сообщение успешно доставлено");
+            System.out.println("РЎРѕРѕР±С‰РµРЅРёРµ СѓСЃРїРµС€РЅРѕ РґРѕСЃС‚Р°РІР»РµРЅРѕ");
         } catch (IOException e) {
-            System.err.println("ошибка: " + e);
+            System.err.println("РѕС€РёР±РєР°: " + e);
 
         } finally {
             if (socket != null) {
                 try {
-                    socket.close(); // разрыв соединения
+                    socket.close(); // СЂР°Р·СЂС‹РІ СЃРѕРµРґРёРЅРµРЅРёСЏ
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
