@@ -12,24 +12,24 @@ public class ServerMessage {
         Socket s = null;
 
         try {
-            //создание объекта и назначение номера порта
+            //СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° Рё РЅР°Р·РЅР°С‡РµРЅРёРµ РЅРѕРјРµСЂР° РїРѕСЂС‚Р°
             ServerSocket server = new ServerSocket(8030);
-            s = server.accept();//ожидание соединения PrintStream ps =
+            s = server.accept();//РѕР¶РёРґР°РЅРёРµ СЃРѕРµРґРёРЅРµРЅРёСЏ PrintStream ps =
             BufferedReader br
                     = new BufferedReader(
                             new InputStreamReader(s.getInputStream()));
-            //Получить сообщение от клиента
+            //РџРѕР»СѓС‡РёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ РѕС‚ РєР»РёРµРЅС‚Р°
             String message = br.readLine();
-            System.out.println("Исходное сообщение: " + message);
-            message += " - Я на связи";
+            System.out.println("РСЃС…РѕРґРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ: " + message);
+            message += " - РЇ РЅР° СЃРІСЏР·Рё";
 
-            System.out.println("Измененное сообщение: " + message);
+            System.out.println("РР·РјРµРЅРµРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ: " + message);
             br.close();
         } catch (IOException e) {
-            System.err.println("Ошибка: " + e);
+            System.err.println("РћС€РёР±РєР°: " + e);
         } finally {
             if (s != null) {
-                try { // разрыв соединения                    
+                try { // СЂР°Р·СЂС‹РІ СЃРѕРµРґРёРЅРµРЅРёСЏ                    
                     s.close();
                 } catch (IOException e) {
                     e.printStackTrace();
